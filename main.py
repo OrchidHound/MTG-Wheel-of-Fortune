@@ -40,6 +40,7 @@ if __name__ == '__main__':
     @client.event
     async def on_ready():
         print("Logged in as {0.user}".format(client))
+        print("Version 1.0, December 8th 2019")
 
     @client.event
     async def on_message(message):
@@ -88,6 +89,7 @@ if __name__ == '__main__':
                                        'amount. If no players have finished their decks, then the time limit is '
                                        'extended until at least one person is finished.'
                                        '\n4. Follow the legacy banlist.'
+                                       '\n5. Games are performed in best-of-3 matches.'
                                        '\nJust type \'>spin the wheel\' to get started!')
 
     client.run(TOKEN)
