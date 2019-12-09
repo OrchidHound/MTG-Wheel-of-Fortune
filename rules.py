@@ -1,3 +1,6 @@
+# Custom rules that I have commented out are unhealthy for the format, 
+# although I don't want to remove them in-case people find them interesting.
+
 wheel_rules = {'If you would lose, you win the game instead.',
 
                'If a player would draw from an empty library, that player wins the game.',
