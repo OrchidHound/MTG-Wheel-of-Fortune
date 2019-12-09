@@ -8,7 +8,7 @@ from sets import wheel_sets
 from rules import wheel_rules
 
 
-# Generates a set of possible rules/sets to pick from, and adds each to a list which is then returned.
+# Generates a set of possible rules/sets to pick from, and adds each to a set which is then returned.
 def generate():
     rule_list = set()
     set_list = set()
