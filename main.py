@@ -50,26 +50,30 @@ if __name__ == '__main__':
 
         # Main loop that sends the newly generated text to the Discord client.
         if message.content.startswith('>spin the wheel'):
+            full_message = ''  # This is sent at the end of the 'if' statement, and all messages are appended to this.
             gen_rules, gen_sets = generate()  # Depositing rule picks into two sets.
             count = 1
 
             # Loop that creates a new string message (based on each randomly generated rule)
-            # and sends it to the Discord client.
-            await message.channel.send("**Rules:**")
+            # and appends it to full_message.
+            full_message = full_message + '**Rules:**'
             for rule in gen_rules:
                 rule_message = 'Rule ' + str(count) + ': ' + rule
                 count += 1
-                await message.channel.send(rule_message)
+                full_message = full_message + '\n' + rule_message
 
             # Same thing as the previous loop, but for sets instead. Dashes are for formatting in Discord.
-            await message.channel.send("-------------------------------------------------------------------------------"
-                                       "------------------------------------------------------------------------")
-            await message.channel.send("**Sets:**")
+            full_message = full_message + '\n' + '-------------------------------------------------------------------' \
+                                                 '-------------------------------------------------------------------' \
+                                                 '-----------------'
+            full_message = full_message + '\n' + '**Sets:**'
             count = 1
             for set in gen_sets:
                 set_message = 'Set ' + str(count) + ': ' + set
                 count += 1
-                await message.channel.send(set_message)
+                full_message = full_message + '\n' + set_message
+
+            await message.channel.send(full_message)
 
         # Prints out a list of base rules for the format.
         if message.content.startswith('>help'):
