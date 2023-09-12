@@ -70,12 +70,12 @@ if __name__ == '__main__':
 
     @bot.tree.command(name="spin_the_wheel", description="Spin the Wheel of Fortune to get your random sets and rules!")
     @app_commands.choices(choices=[
-        app_commands.Choice(name='Standard mode', value='standard'),
-        app_commands.Choice(name='Classic mode', value='classic'),
-        app_commands.Choice(name='Pre-modern mode', value='pre modern'),
-        app_commands.Choice(name='Modern only mode', value='modern only'),
-        app_commands.Choice(name='Postmodern mode', value='postmodern'),
-        app_commands.Choice(name='Modern forward mode', value='modern forward')
+        app_commands.Choice(name='standard', value='standard'),
+        app_commands.Choice(name='classic', value='classic'),
+        app_commands.Choice(name='pre-modern', value='pre modern'),
+        app_commands.Choice(name='modern only', value='modern only'),
+        app_commands.Choice(name='postmodern', value='postmodern'),
+        app_commands.Choice(name='modern forward', value='modern forward')
     ])
     async def spin_the_wheel(interaction: discord.Interaction, choices: app_commands.Choice[str]):
         # Main loop that sends the newly generated text to the Discord client.
