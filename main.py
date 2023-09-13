@@ -2,7 +2,6 @@
 
 from requests import get
 from json import loads
-from shutil import copyfileobj
 from dateutil import relativedelta
 
 import datetime
@@ -64,7 +63,7 @@ if __name__ == '__main__':
     @bot.event
     async def on_ready():
         print("Logged in as {0.user}".format(bot))
-        print("Version 1.02, August 9th 2020")
+        print("Version 2, September 13th 2023")
         # Sync the command tree and allow slash commands
         await bot.tree.sync()
 
